@@ -1,53 +1,60 @@
-#Python 爬虫：把runoob网站上的各类教程转换成 PDF 电子书
+#Python 爬虫
+-------------------------------------------------------------
+## 开发环境
+  - **Windows 7 64位**
+  - **python 3.6**
+  - **Visual Studio 2017**
 
-### 系统要求
-python3.4以上版本, 不支持python2.x
+
+## 准备工具
+
+- **requests**: 用于请求网络
+- **beautifulsoup**: 用于操作 html 数据
+- **wkhtmltopdf**: 用来把获取到的网络的 html 文件转换为 PDF 文件； 其中所使用的 pdfkit 是 wkhtmltopdf 的Python封装包
 
 
-### 准备工具
+所以，需要先安装好下面的依赖包：
 
-requests、beautifulsoup 是爬虫两大神器，reuqests 用于网络请求，beautifusoup 用于操作 html 数据。有了这两把梭子，干起活来利索。scrapy 这样的爬虫框架我们就不用了，这样的小程序派上它有点杀鸡用牛刀的意思。此外，既然是把 html 文件转为 pdf，那么也要有相应的库支持， wkhtmltopdf 就是一个非常的工具，它可以用适用于多平台的 html 到 pdf 的转换，pdfkit 是 wkhtmltopdf 的Python封装包。click是一款命令行工具参数工具，用于在命令行传递参数。
 
-首先安装好下面的依赖包
+    pip install requests
+    pip install beautifulsoup4
+    pip install pdfkit
 
-```python
-pip install requests
-pip install beautifulsoup4
-pip install pdfkit
-pip install click
-```
+然后需要在[wkhtmltopdf](http://wkhtmltopdf.org/downloads.html)官网下载稳定版进行安装，安装完成之后把该程序的执行路径加入到系统环境 $PATH 变量中（若在安装的时候将选择信息的两个选项打钩，安装过程中会自动将路径添加到环境变量）。
 
-### 安装 wkhtmltopdf
-Windows平台直接在 [http://wkhtmltopdf.org/downloads.html](http://wkhtmltopdf.org/downloads.html) 下载稳定版的 wkhtmltopdf 进行安装，安装完成之后把该程序的执行路径加入到系统环境 $PATH 变量中，否则 pdfkit 找不到 wkhtmltopdf 就出现错误 “No wkhtmltopdf executable found”。Ubuntu 和 CentOS 可以直接用命令行进行安装
+## 运行
+1. 以命令行的形式：
 
-```shell
-$ sudo apt-get install wkhtmltopdf  # ubuntu
-$ sudo yum intsall wkhtmltopdf      # centos
-```
+		python RunoobToPdf.py
 
-### 运行
-```python
-python runoob2pdf.py
-```
+2. 或者在IED环境中直接点击图标 ![](https://i.imgur.com/ssy87tr.png) 运行
 
-### 说明
-执行 python runoob2pdf.py后
-会提示让你输入
-1. runoob网站上的教程主页地址，主页地址就是网页顶部菜单上对应的地址。
-   如效果图。
-2. 输入保存的pdf文件名。
+## 说明
 
-### 效果图
-![image](./runoob2pdf.jpg)
-![image](./runoob2pdf_1.jpg)
-![image](./runoob2pdf_2.jpg)
-![image](./runoob2pdf_3.jpg)
 
-### 特别说明
-感谢《Python 爬虫：把廖雪峰的教程转换成 PDF 电子书》的作者liuzhijun，本项目的代码都是基于他的代码改动后实现。
+1. 该程序是爬取[RUNOOB.COM](http://www.runoob.com/python3/python3-tutorial.html)网站上的Python3教程并转换成 PDF 文档，若需爬取该网站其他信息或者其他网站，只需要做部分修改即可。
 
-### Contact me
->作者：jadentseng 
->微信： cheney2010  
+2. 在该仓库中，附带有作者爬取到的RUNOOB.COM中的 **Python3教程** 。
+
+3. 另外，还附带有[廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)中的Python3教程，可以做学习使用。
+
+
+
+
+## 效果图
+该程序是在号称宇宙最强的IED **Visual Studio 2017** 环境下编写的，其编辑界面如图：
+
+![](https://i.imgur.com/82l1jWe.png)
+
+爬虫运行完成之后，生成的 **PDF** 文件界面如图：
+
+![](https://i.imgur.com/N3cFMxN.png)
+
+
+## Other
+
+>Author：Regan_Chai
+>
+>E-Mail： regan_chai@163.com
 
 
