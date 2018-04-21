@@ -31,6 +31,7 @@
 
 ## 说明
 
+1. 在末尾 **Other** 附有该程序的部分解读。
 
 1. 该程序是爬取[RUNOOB.COM](http://www.runoob.com/python3/python3-tutorial.html)网站上的Python3教程并转换成 PDF 文档，若需爬取该网站其他信息或者其他网站，只需要做部分修改即可。
 
@@ -53,8 +54,9 @@
 
 ## Other
 
->Author：Regan_Chai
+>**Author：** Regan_Chai
 >
->E-Mail： regan_chai@163.com
-
+>**E-Mail：** regan_chai@163.com
+>
+> **CSDN：** https://blog.csdn.net/u012319441/article/details/80032068
 
